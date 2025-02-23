@@ -19,6 +19,24 @@ jobs:
         with:
           node-version: 18.12.0
 
+          # 缓存 pnpm 依赖
+      - name: Cache pnpm store
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # 缓存构建产物
+      - name: Cache dist folder
+        uses: actions/cache@v2
+        with:
+          path: dist
+          key: ${{ runner.os }}-dist-${{ hashFiles('**/dumi.config.js') }}
+          restore-keys: |
+            ${{ runner.os }}-dist-
+
       - name: Install and Build
         run: |
           npm i -g pnpm

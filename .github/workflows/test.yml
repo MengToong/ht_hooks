@@ -13,7 +13,17 @@ jobs:
       - name: lock npm version
         uses: actions/setup-node@v3
         with:
-          node-version: 18.12.0
+          node-version:
+            18.12.0
+
+            # 缓存 pnpm 依赖
+      - name: Cache pnpm store
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install and Build
         run: |
