@@ -1,7 +1,7 @@
 name: Build and Deploy
 on:
   workflow_run:
-    workflows: ['Test CI'] # 指定触发的 workflow 名称
+    workflows: ['test.yml'] # 指定触发的 workflow 名称
     types:
       - completed
 jobs:
