@@ -1,15 +1,14 @@
 name: Build and Deploy
 on:
-  workflow_run:
-    workflows: ['Test CI'] # 指定触发的 workflow 名称
-    types:
-      - completed
+  push:
+    branches:
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
