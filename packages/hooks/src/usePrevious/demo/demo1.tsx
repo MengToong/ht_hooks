@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 
 export default () => {
   const [count, setCount] = useState(0);
-  const previous = usePrevious(count);
+  const previous = usePrevious(count);//点击按钮state更新重新渲染，重新执行函数组件执行usePrevious
   return (
     <>
       <div>counter current value: {count}</div>
