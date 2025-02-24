@@ -42,7 +42,7 @@ export default {
   navs: [
     { title: '指南', path: '/guide' },
     { title: 'Hooks', path: '/hooks' },
-    { title: 'GitHub', path: 'https://github.com/encode-studio-fe/ht_hooks' },
+    { title: 'GitHub', path: 'https://github.com/MengToong/ht_hooks' },
   ],
   menus: {
     '/': [
