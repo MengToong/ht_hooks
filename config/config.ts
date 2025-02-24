@@ -6,7 +6,7 @@ export default {
     type: 'none',
     exclude: [],
   },
-  publicPath: '/encode-hooks/',
+  publicPath: '/git_test/',
   history: { type: 'hash' },
   extraBabelPlugins: [
     [
@@ -42,7 +42,7 @@ export default {
   navs: [
     { title: '指南', path: '/guide' },
     { title: 'Hooks', path: '/hooks' },
-    { title: 'GitHub', path: 'https://mengtoong.github.io/git_test/' },
+    { title: 'GitHub', path: 'https://github.com/encode-studio-fe/encode-hooks' },
   ],
   menus: {
     '/': [
