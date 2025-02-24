@@ -1,6 +1,6 @@
 {
-  "name": "encode-hooks",
-  "description": "印客学院 React 业务 Hooks",
+  "name": "ht_hooks",
+  "description": "浩桐 React 业务 Hooks",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -24,7 +24,7 @@
     "react",
     "hooks"
   ],
-  "author": "chenghuai",
+  "author": "ht",
   "license": "ISC",
   "devDependencies": {
     "@ant-design/icons": "^5.0.1",

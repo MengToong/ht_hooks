@@ -1,10 +1,10 @@
 /**
  * title.zh-CN: 与其它全屏操作共存
- * desc.zh-CN: 元素的全屏情况可能被其它脚本修改，不用担心，encode-hooks 可以与它们共存。
+ * desc.zh-CN: 元素的全屏情况可能被其它脚本修改，不用担心，ht_hooks 可以与它们共存。
  */
 
 import React, { useRef } from 'react';
-import { useFullscreen } from 'encode-hooks';
+import { useFullscreen } from 'ht_hooks';
 
 function vanillaToggleFullscreen(element) {
   const isFullscreen = !!document.fullscreenElement;

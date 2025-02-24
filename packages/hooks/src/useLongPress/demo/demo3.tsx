@@ -3,7 +3,7 @@
  * desc.zh-CN: 超出移动阈值之后，长按事件将不会触发
  */
 import React, { useRef, useState } from 'react';
-import { useLongPress } from 'encode-hooks';
+import { useLongPress } from 'ht_hooks';
 
 export default () => {
   const [pressCounter, setPressCounter] = useState(0);

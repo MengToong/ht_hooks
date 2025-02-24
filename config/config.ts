@@ -6,7 +6,7 @@ export default {
     type: 'none',
     exclude: [],
   },
-  publicPath: '/git_test/',
+  publicPath: '/ht_hooks/',
   history: { type: 'hash' },
   extraBabelPlugins: [
     [
@@ -18,16 +18,16 @@ export default {
       'fusion',
     ],
   ],
-  title: '印客学院 encode hooks',
+  title: '萌桐 encode hooks',
   mode: 'site',
-  favicon: '/encode-hooks/avatar.png',
-  logo: '/encode-hooks/avatar.png',
+  favicon: '/ht_hooks/avatar.png',
+  logo: '/ht_hooks/avatar.png',
   dynamicImport: {},
   manifest: {},
   hash: true,
   alias: {
-    encodeHooks: process.cwd() + '/packages/hooks/src/index.ts',
-    ['encode-hooks']: process.cwd() + '/packages/hooks/src/index.ts',
+    htHooks: process.cwd() + '/packages/hooks/src/index.ts',
+    ['ht_hooks']: process.cwd() + '/packages/hooks/src/index.ts',
   },
   resolve: {
     includes: ['docs', 'packages/hooks/src'],
@@ -42,7 +42,7 @@ export default {
   navs: [
     { title: '指南', path: '/guide' },
     { title: 'Hooks', path: '/hooks' },
-    { title: 'GitHub', path: 'https://github.com/encode-studio-fe/encode-hooks' },
+    { title: 'GitHub', path: 'https://github.com/encode-studio-fe/ht_hooks' },
   ],
   menus: {
     '/': [

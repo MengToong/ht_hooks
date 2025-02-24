@@ -48,7 +48,7 @@ group:
 
 ### 删除缓存
 
-encode-hooks 提供了一个 `clearCache` 方法，可以清除指定 `cacheKey` 的缓存数据。
+ht_hooks 提供了一个 `clearCache` 方法，可以清除指定 `cacheKey` 的缓存数据。
 
 <code src="./demo/clearCache.tsx" />
 
@@ -86,7 +86,7 @@ interface CachedData<TData, TParams> {
 ### clearCache
 
 ```tsx | pure
-import { clearCache } from 'encode-hooks';
+import { clearCache } from 'ht_hooks';
 
 clearCache(cacheKey?: string | string[]);
 ```

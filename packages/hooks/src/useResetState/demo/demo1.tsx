@@ -1,5 +1,5 @@
 import React from 'react';
-import { useResetState } from 'encode-hooks';
+import { useResetState } from 'ht_hooks';
 
 interface State {
   hello: string;

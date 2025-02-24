@@ -2,7 +2,7 @@
  * title.zh-CN: 基础用法
  */
 
-import { useMutationObserver } from 'encode-hooks';
+import { useMutationObserver } from 'ht_hooks';
 import React, { useRef, useState } from 'react';
 
 const App: React.FC = () => {

@@ -4,7 +4,7 @@
  */
 
 import React, { useRef } from 'react';
-import { useDrag } from 'encode-hooks';
+import { useDrag } from 'ht_hooks';
 
 const COMMON_STYLE: React.CSSProperties = {
   border: '1px solid #e8e8e8',

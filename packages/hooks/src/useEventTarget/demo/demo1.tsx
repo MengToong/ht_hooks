@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useEventTarget } from 'encode-hooks';
+import { useEventTarget } from 'ht_hooks';
 
 export default () => {
   const [value, { reset, onChange }] = useEventTarget({ initialValue: 'this is initial value' });

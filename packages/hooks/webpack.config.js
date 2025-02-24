@@ -5,8 +5,8 @@ const path = require('path');
 module.exports = merge(common, {
   entry: './es/index.js',
   output: {
-    filename: 'encode-hooks.js',
-    library: 'encode-hooks',
+    filename: 'ht_hooks.js',
+    library: 'ht_hooks',
     path: path.resolve(__dirname, './dist'),
   },
 });

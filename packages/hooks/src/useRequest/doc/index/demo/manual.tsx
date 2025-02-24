@@ -5,7 +5,7 @@
 
 import { message } from 'antd';
 import React, { useState } from 'react';
-import { useRequest } from 'encode-hooks';
+import { useRequest } from 'ht_hooks';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function changeUsername(username: string): Promise<{ success: boolean }> {

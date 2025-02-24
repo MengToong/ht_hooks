@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useToggle } from 'encode-hooks';
+import { useToggle } from 'ht_hooks';
 
 export default () => {
   const [state, { toggle, set, setLeft, setRight }] = useToggle('Hello', 'World');

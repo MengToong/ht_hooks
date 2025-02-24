@@ -1,6 +1,6 @@
 import Mock from 'mockjs';
 import React from 'react';
-import { useRequest, clearCache, useBoolean } from 'encode-hooks';
+import { useRequest, clearCache, useBoolean } from 'ht_hooks';
 import { message } from 'antd';
 
 async function getArticle(): Promise<{ data: string; time: number }> {

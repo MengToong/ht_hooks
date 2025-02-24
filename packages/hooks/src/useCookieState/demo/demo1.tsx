@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useCookieState } from 'encode-hooks';
+import { useCookieState } from 'ht_hooks';
 
 export default () => {
   const [message, setMessage] = useCookieState('useCookieStateString');

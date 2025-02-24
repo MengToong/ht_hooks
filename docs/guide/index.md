@@ -1,6 +1,6 @@
-# encode-hooks
+# ht_hooks
 
-印客学院 React 业务 Hooks
+萌桐 React 业务 Hooks
 
 ## ⛰️ 能力支持
 
@@ -59,7 +59,7 @@ pnpm run changelog
 ## 📧 联系
 
 - **印客学院官网**: <http://encodestudio.cn>
-- **encode Hooks** <https://encode-studio-fe.github.io/encode-hooks/>
-- **GitHub**: <https://github.com/encode-studio-fe/encode-hooks>
+- **encode Hooks** <https://encode-studio-fe.github.io/ht_hooks/>
+- **GitHub**: <https://github.com/encode-studio-fe/ht_hooks>
 
 </br>

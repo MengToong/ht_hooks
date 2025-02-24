@@ -11,10 +11,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "encodeHooks": ["./packages/hooks/src/index.ts"],
-      "encode-hooks": ["./packages/hooks/src/index.ts"],
-      "encodeHooks/lib/*": ["./packages/hooks/src/*"],
-      "encode-hooks/lib/*": ["./packages/hooks/src/*"]
+      "htHooks": ["./packages/hooks/src/index.ts"],
+      "ht_hooks": ["./packages/hooks/src/index.ts"],
+      "htHooks/lib/*": ["./packages/hooks/src/*"],
+      "ht_hooks/lib/*": ["./packages/hooks/src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,

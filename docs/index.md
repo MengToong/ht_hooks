@@ -1,8 +1,8 @@
 ---
 title: 首页
 hero:
-  image: /encode-hooks/short-logo.png
-  desc: 印客学院 React 业务 Hooks
+  image: /ht_hooks/short-logo.png
+  desc: 萌桐 React 业务 Hooks
   actions:
     - text: 指南
       link: /guide
@@ -20,9 +20,9 @@ footer: Copyright (c) © 2023 by encode studio, All Rights Reserved
 ## 📦 安装
 
 ```bash
-$ pnpm install --save encode-hooks
+$ pnpm install --save ht_hooks
 # or
-$ yarn add encode-hooks
+$ yarn add ht_hooks
 ```
 
 ## 🔨 使用
@@ -30,5 +30,5 @@ $ yarn add encode-hooks
 参考 `Hooks`内容，使用如下：
 
 ```ts
-import { useToggle } from 'encode-hooks';
+import { useToggle } from 'ht_hooks';
 ```

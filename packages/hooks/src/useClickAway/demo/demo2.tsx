@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { useClickAway } from 'encode-hooks';
+import { useClickAway } from 'ht_hooks';
 
 export default () => {
   const [counter, setCounter] = useState(0);

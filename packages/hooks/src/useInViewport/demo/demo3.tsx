@@ -2,7 +2,7 @@
  * title: 监听内容滚动选中菜单
  * desc: 传入 `callback`, 使得 `IntersectionObserver` 的回调被调用时，用户可以做一些自定义操作。
  */
-import { useInViewport, useMemoizedFn } from 'encode-hooks';
+import { useInViewport, useMemoizedFn } from 'ht_hooks';
 import React, { useRef, useState } from 'react';
 
 const menus = ['menu-1', 'menu-2', 'menu-3'];

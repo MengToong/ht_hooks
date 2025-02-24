@@ -1,7 +1,7 @@
-import { useBoolean } from 'encode-hooks';
+import { useBoolean } from 'ht_hooks';
 import Mock from 'mockjs';
 import React from 'react';
-import { useRequest } from 'encode-hooks';
+import { useRequest } from 'ht_hooks';
 
 async function getArticle(): Promise<{ data: string; time: number }> {
   console.log('cacheKey-staleTime');

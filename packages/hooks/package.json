@@ -1,7 +1,7 @@
 {
-  "name": "encode-hooks",
+  "name": "ht_hooks",
   "version": "0.1.0",
-  "description": "印客学院 React 业务 Hooks",
+  "description": "浩桐 React 业务 Hooks",
   "keywords": [
     "encode",
     "react",
@@ -10,14 +10,14 @@
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
-  "unpkg": "dist/encode-hooks.js",
+  "unpkg": "dist/ht_hooks.js",
   "sideEffects": false,
-  "authors": "chenghuai",
+  "authors": "ht",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "repository": "https://github.com/encode-studio-fe/encode-hooks",
-  "homepage": "https://github.com/encode-studio-fe/encode-hooks",
+  "repository": "https://github.com/encode-studio-fe/ht_hooks",
+  "homepage": "https://github.com/encode-studio-fe/ht_hooks",
   "scripts": {
     "build": "gulp && webpack-cli"
   },

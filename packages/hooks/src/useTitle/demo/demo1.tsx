@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useTitle } from 'encode-hooks';
+import { useTitle } from 'ht_hooks';
 
 export default () => {
   useTitle('Page Title');
