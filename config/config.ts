@@ -18,7 +18,7 @@ export default {
       'fusion',
     ],
   ],
-  title: '萌桐 encode hooks',
+  title: '萌桐 hooks',
   mode: 'site',
   favicon: '/ht_hooks/avatar.png',
   logo: '/ht_hooks/avatar.png',
