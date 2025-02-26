@@ -10,6 +10,7 @@ export default () => {
   const [count, setCount] = useState(0);
 
   const latestCountRef = useLatest(count);
+  //const latestCountRef = useRef(count)
 
   useEffect(() => {
     const interval = setInterval(() => {

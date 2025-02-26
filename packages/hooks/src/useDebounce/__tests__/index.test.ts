@@ -9,7 +9,7 @@ describe('useDebounce', () => {
     expect(result.current).toBe(0);
 
     mountedState = 1;
-    rerender();
+    rerender();//模拟变化时重新触发hook
     await sleep(50);
     expect(result.current).toBe(0);
 

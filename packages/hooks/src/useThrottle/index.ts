@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useCallback } from 'react';
 import useThrottleFn from '../useThrottleFn';
 import type { ThrottleOptions } from './throttleOptions';
 
@@ -36,12 +36,12 @@ function useThrottle3(fn:fn, t:number) {
     }
   })
 
-  return function () {
+  return useCallback(function () {//useCallback性能优化
     if (!timer) { //#若timer有值说明正在计时中则什么都不做，若timer没值（计时结束定时器自动清除，timer手动清空）说明此时无计时，则开启定时，结束后执行然后关闭定时器
       timer = setTimeout(() => {
         fn();
         timer = null;
       }, t);
     }
-  };
+  },[timer,fn,t]);
 }
