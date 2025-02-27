@@ -16,16 +16,16 @@ function useMemoizedFn<T extends noop>(fn: T) {
     }
   }
 
-  const fnRef = useRef<T>(fn);
+  const fnRef = useRef<T>(fn);//!使用useRef在fnRef.current中保存参数函数，保持在组件的生命周期中，而不因渲染而重置且一直是最新的
 
   // why not write `fnRef.current = fn`?
   // https://github.com/alibaba/hooks/issues/728
-  fnRef.current = useMemo(() => fn, [fn]);
+  fnRef.current = useMemo(() => fn, [fn]);//!只有参数函数变化时才更新fnRef.current，但只是更新内容，fnRef.current地址始终不变
 
   const memoizedFn = useRef<PickFunction<T>>();
-  if (!memoizedFn.current) {
+  if (!memoizedFn.current) {//若ref不存在才创建
     memoizedFn.current = function (this, ...args) {
-      return fnRef.current.apply(this, args);
+      return fnRef.current.apply(this, args);//创建的始终是最新的，不需要useCallback中dependence关联
     };
   }
 
