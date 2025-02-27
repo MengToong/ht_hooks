@@ -57,7 +57,7 @@ function useEventListener(eventName: string, handler: noop, options: Options = {
       });
 
       return () => {
-        targetElement.removeEventListener(eventName, eventListener, {
+        targetElement.removeEventListener(eventName, eventListener, {//自动在组件卸载时移除事件监听器，避免内存泄漏或重复绑定事件
           capture: options.capture,
         });
       };

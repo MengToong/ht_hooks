@@ -18,7 +18,7 @@ const useMutationObserver = (
       }
       const observer = new MutationObserver(callbackRef.current);
       // @ts-ignore
-      observer.observe(element, options);
+      observer.observe(element, options);//监听DOM树变化
       return () => {
         observer?.disconnect();
       };
