@@ -22,6 +22,6 @@ export const createUpdateEffect: (hook: EffectHookType) => EffectHookType =
       }
     }, deps);//!这个hook定义了挂载时什么也不执行，只有更新时执行effect且更新时不执行return
   };
-//!两个hook加起来，定义了组件挂载时什么也不执行，更新时只执行内容不执行return，卸载时执行return，
+//!两个hook加起来，定义了组件挂载时只改参数不执行内容，更新时只执行内容不执行return，卸载时执行return清理参数不执行内容，
 //!否则只要想有更新，那么挂载与更新是粘粘的，只要有return，那么更新与销毁也是粘粘的
 export default createUpdateEffect;
