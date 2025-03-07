@@ -1,3 +1,5 @@
+//!限制一定时间内只能发一次请求，避免高频触发。
+
 import type { DebouncedFunc, ThrottleSettings } from 'lodash-es';
 import { throttle } from 'lodash-es';
 import { useEffect, useRef } from 'react';

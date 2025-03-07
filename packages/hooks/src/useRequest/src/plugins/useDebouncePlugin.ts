@@ -1,3 +1,5 @@
+//!如果短时间内频繁触发请求，我不立刻发，而是等一段时间用户不再触发时再发请求。
+
 import type { DebouncedFunc, DebounceSettings } from 'lodash-es';
 import { debounce } from 'lodash-es';
 import { useEffect, useMemo, useRef } from 'react';
@@ -6,6 +8,10 @@ import type { Plugin } from '../types';
 const useDebouncePlugin: Plugin<any, any[]> = (
   fetchInstance,
   { debounceWait, debounceLeading, debounceTrailing, debounceMaxWait },
+  // debounceWait：防抖延迟时间（毫秒）。
+  // debounceLeading：是否在延迟开始前触发一次。
+  // debounceTrailing：是否在延迟结束后触发一次。
+  // debounceMaxWait：最长等待时间。
 ) => {
   const debouncedRef = useRef<DebouncedFunc<any>>();
 
@@ -27,7 +33,7 @@ const useDebouncePlugin: Plugin<any, any[]> = (
     if (debounceWait) {
       const _originRunAsync = fetchInstance.runAsync.bind(fetchInstance);
 
-      debouncedRef.current = debounce(
+      debouncedRef.current = debounce( //#lodash中的防抖api
         (callback) => {
           callback();
         },
@@ -37,7 +43,7 @@ const useDebouncePlugin: Plugin<any, any[]> = (
 
       // debounce runAsync should be promise
       // https://github.com/lodash/lodash/issues/4400#issuecomment-834800398
-      fetchInstance.runAsync = (...args) => {
+      fetchInstance.runAsync = (...args) => { //!新的runAsync = 使用lodash中现成debounce进行防抖后的 runAsync
         return new Promise((resolve, reject) => {
           debouncedRef.current?.(() => {
             _originRunAsync(...args)
