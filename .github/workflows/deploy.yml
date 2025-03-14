@@ -21,6 +21,7 @@ jobs:
         run: |
           npm i -g pnpm
           pnpm run init
+          pnpm run npmpub
           pnpm run build:doc
         env:
           NODE_OPTIONS: '--max_old_space_size=4096 --openssl-legacy-provider'
