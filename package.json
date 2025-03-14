@@ -1,6 +1,6 @@
 {
   "name": "ht_hooks",
-  "description": "浩桐 React 业务 Hooks",
+  "description": "ht React 业务 Hooks",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",

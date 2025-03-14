@@ -1,9 +1,9 @@
 {
   "name": "ht_hooks",
   "version": "0.1.0",
-  "description": "浩桐 React 业务 Hooks",
+  "description": "ht React 业务 Hooks",
   "keywords": [
-    "encode",
+    "ht",
     "react",
     "hooks"
   ],

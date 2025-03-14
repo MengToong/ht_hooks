@@ -1,6 +1,6 @@
 # ht_hooks
 
-印客学院 React 业务 Hooks
+ht React 业务 Hooks
 
 ## ⛰️ 能力支持
 
