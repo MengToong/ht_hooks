@@ -15,7 +15,6 @@
     "test": "jest",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "pub": "pnpm run build && pnpm -r --filter=./packages/* publish",
-    "npmpub": "pnpm -r --filter=./packages/* publish",
     "pub:beta": "pnpm run build && pnpm -r --filter=./packages/* publish --tag beta",
     "encode-fe-lint-scan": "encode-fe-lint scan",
     "encode-fe-lint-fix": "encode-fe-lint fix"
