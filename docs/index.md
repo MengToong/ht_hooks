@@ -8,7 +8,7 @@ hero:
       link: /guide
     - text: Hooks 列表
       link: /hooks
-footer: Copyright (c) © 2023 by encode studio, All Rights Reserved
+
 ---
 
 ## ✨ 特性

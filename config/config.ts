@@ -1,3 +1,5 @@
+//!首页
+
 import { menus } from './hooks';
 
 export default {
@@ -25,26 +27,26 @@ export default {
   dynamicImport: {},
   manifest: {},
   hash: true,
-  alias: {
+  alias: { //别名
     htHooks: process.cwd() + '/packages/hooks/src/index.ts',
     ['ht_hooks']: process.cwd() + '/packages/hooks/src/index.ts',
   },
   resolve: {
-    includes: ['docs', 'packages/hooks/src'],
+    includes: ['docs', 'packages/hooks/src'], //dumi读取的文档
   },
-  links: [
+  links: [ //CDN方式引入主题包
     {
       rel: 'stylesheet',
       href: 'https://unpkg.com/@alifd/theme-design-pro@0.6.2/dist/next-noreset.min.css',
     },
     { rel: 'stylesheet', href: '/style.css' },
   ],
-  navs: [
+  navs: [ //导航
     { title: '指南', path: '/guide' },
     { title: 'Hooks', path: '/hooks' },
     { title: 'GitHub', path: 'https://github.com/MengToong/ht_hooks' },
   ],
-  menus: {
+  menus: { //布局
     '/': [
       {
         title: '首页',

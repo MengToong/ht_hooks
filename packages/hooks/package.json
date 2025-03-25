@@ -17,7 +17,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "repository": "https://github.com/MengToong/ht_hooks",
-  "homepage": "https://github.com/MengToong/ht_hooks",
+  "homepage": "https://github.com/MengToong",
   "scripts": {
     "build": "gulp && webpack-cli"
   },

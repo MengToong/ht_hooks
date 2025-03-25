@@ -24,7 +24,7 @@ function useRequest<TData, TParams extends any[]>(
   options?: Options<TData, TParams>,//配置
   plugins?: Plugin<TData, TParams>[],//插件
 ) {
-  return useRequestImplement<TData, TParams>(service, options, [
+  return useRequestImplement<TData, TParams>(service, options, [ //!useRequestImplement的返回值就是useRequest的返回值
     ...(plugins || []),
     useDebouncePlugin,
     useLoadingDelayPlugin,

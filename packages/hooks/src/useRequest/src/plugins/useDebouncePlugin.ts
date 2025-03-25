@@ -33,7 +33,7 @@ const useDebouncePlugin: Plugin<any, any[]> = (
     if (debounceWait) {
       const _originRunAsync = fetchInstance.runAsync.bind(fetchInstance);
 
-      debouncedRef.current = debounce( //#lodash中的防抖api
+      debouncedRef.current = debounce( //#lodash中的防抖api,debounce() 返回的是一个被“防抖包裹”的新函数。
         (callback) => {
           callback();
         },

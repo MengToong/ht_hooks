@@ -32,10 +32,10 @@ function useRequestImplement<TData, TParams extends any[]>(
   const update = useUpdate();//创建一个更新的动作。这是一个触发 React 组件强制刷新的函数，Fetch.setState() 就靠它
 
   //创建 fetchInstance 实例
-  const fetchInstance = useCreation(() => { //用 useCreation 保证 fetchInstance 只初始化一次
+  const fetchInstance = useCreation(() => { //用 useCreation 保证 fetchInstance 只初始化一次//#得到Fetch类的实例fetchInstance
     const initState = plugins.map((p) => p?.onInit?.(fetchOptions)).filter(Boolean);
-    //#如果插件有OnInit的话，执行插件的OnInit(fetchOptions)。map会将所有插件OnInit的返回值收集为一个数组，用filter过滤掉 undefined 的，剩下存入initState。（initState是所有有OnInit的插件执行OnInit返回结果的数组）
-    return new Fetch<TData, TParams>( //!Fetch 是核心类，负责具体的请求控制、状态管理等
+    //#对于参数三的插件数组，如果插件有OnInit的话，执行插件的OnInit(fetchOptions)。map会将所有插件OnInit的返回值收集为一个数组，用filter过滤掉 undefined 的，剩下存入initState。（initState是所有有OnInit的插件执行OnInit返回结果的数组）
+    return new Fetch<TData, TParams>( //!实例化Fetch ，Fetch 是核心类，负责具体的请求控制、状态管理等
       serviceRef,
       fetchOptions, //请求配置参数
       update, //通知 React 更新组件的函数
@@ -67,14 +67,14 @@ function useRequestImplement<TData, TParams extends any[]>(
 
   return { //!调用useRequest实际返回的结果，即fetch实例的状态和方法
     loading: fetchInstance.state.loading, //请求状态
-    data: fetchInstance.state.data, //请求返回数据
+    data: fetchInstance.state.data, //请求返回数据，//!虽然还没run没有实际请求结果，但是先返回，别人先拿着，run时底层调用setState更新data，别人手里拿的data自然就变的有值了
     error: fetchInstance.state.error, //请求错误信息
     params: fetchInstance.state.params || [], //请求参数
-    cancel: useMemoizedFn(fetchInstance.cancel.bind(fetchInstance)), //取消请求
-    refresh: useMemoizedFn(fetchInstance.refresh.bind(fetchInstance)), // 重新请求
+    cancel: useMemoizedFn(fetchInstance.cancel.bind(fetchInstance)), //取消请求的方法
+    refresh: useMemoizedFn(fetchInstance.refresh.bind(fetchInstance)), // 重新请求的方法
     refreshAsync: useMemoizedFn(fetchInstance.refreshAsync.bind(fetchInstance)), //异步刷新
-    run: useMemoizedFn(fetchInstance.run.bind(fetchInstance)), //手动运行请求
-    runAsync: useMemoizedFn(fetchInstance.runAsync.bind(fetchInstance)), //异步运行请求
+    run: useMemoizedFn(fetchInstance.run.bind(fetchInstance)), //手动运行请求的方法
+    runAsync: useMemoizedFn(fetchInstance.runAsync.bind(fetchInstance)), //异步运行请求的方法
     mutate: useMemoizedFn(fetchInstance.mutate.bind(fetchInstance)), //手动修改数据
   } as Result<TData, TParams>;
 }

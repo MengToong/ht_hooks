@@ -75,7 +75,7 @@ export default class Fetch<TData, TParams extends any[]> {
       let { servicePromise } = this.runPluginHandler('onRequest', this.serviceRef.current, params); //#调用插件的 onRequest 钩子，看看插件要不要用自定义的请求 Promise（比如缓存命中的情况）
 
       if (!servicePromise) {
-        servicePromise = this.serviceRef.current(...params); //!如果插件没有返回 Promise，才调用用户传入的真正请求( service函数 )
+        servicePromise = this.serviceRef.current(...params); //!如果插件没有返回 Promise，才调用用户传入的真正请求( service函数 )！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
       }
 
       const res = await servicePromise; //等待请求返回结果
@@ -87,7 +87,7 @@ export default class Fetch<TData, TParams extends any[]> {
 
       // const formattedResult = this.options.formatResultRef.current ? this.options.formatResultRef.current(res) : res;
 
-      this.setState({ //#请求成功，更新状态
+      this.setState({ //!请求成功，更新状态
         data: res, //保存数据
         error: undefined, //清空错误，因为已请求成功
         loading: false, //结束 loading因为已请求完毕
@@ -103,7 +103,7 @@ export default class Fetch<TData, TParams extends any[]> {
       }
 
       return res; //#最终返回请求结果
-    } catch (error) { // 如果请求失败
+    } catch (error) { //!若请求失败
       if (currentCount !== this.count) { //同样检查请求是否还有效，如果是旧请求就丢弃
         // prevent run.then when request is canceled
         return new Promise(() => { });
@@ -114,13 +114,13 @@ export default class Fetch<TData, TParams extends any[]> {
         loading: false, //结束loading因为已请求完毕
       });
 
-      this.options.onError?.(error, params); // 执行外部的 onError 回调和插件的 onError 钩子
+      this.options.onError?.(error, params); //# 执行外部的 onError 回调和插件的 onError 钩子
       this.runPluginHandler('onError', error, params);
 
       this.options.onFinally?.(params, undefined, error);
 
       if (currentCount === this.count) {
-        this.runPluginHandler('onFinally', params, undefined, error); // 请求失败的情况下，同样执行 onFinally 钩子，传入错误信息
+        this.runPluginHandler('onFinally', params, undefined, error); //# 请求失败的情况下，同样执行 onFinally 钩子，传入错误信息
       }
 
       throw error; //抛出错误，让调用 runAsync() 的地方可以 catch 到

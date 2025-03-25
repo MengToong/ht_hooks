@@ -25,7 +25,7 @@ export default () => {
       <div style={{ marginBottom: 16 }}>{isFullscreen ? 'Fullscreen' : 'Not fullscreen'}</div>
       <div>
         <button style={{ marginRight: '8px' }} onClick={toggleFullscreen}>
-          encode hooks toggleFullscreen
+          ht hooks toggleFullscreen
         </button>
         <button onClick={() => vanillaToggleFullscreen(ref.current)}>
           vanilla toggleFullscreen
