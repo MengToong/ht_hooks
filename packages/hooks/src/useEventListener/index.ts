@@ -37,11 +37,11 @@ function useEventListener<K extends keyof WindowEventMap>(
 function useEventListener(eventName: string, handler: noop, options: Options): void;
 
 function useEventListener(eventName: string, handler: noop, options: Options = {}) {
-  const handlerRef = useLatest(handler);
+  const handlerRef = useLatest(handler); //#解决闭包陷阱
 
   useEffectWithTarget(
     () => {
-      const targetElement = getTargetElement(options.target, window);
+      const targetElement = getTargetElement(options.target, window);//#支持传入任意 target（如 ref、DOM、window、document）
       if (!targetElement?.addEventListener) {
         return;
       }
@@ -57,7 +57,7 @@ function useEventListener(eventName: string, handler: noop, options: Options = {
       });
 
       return () => {
-        targetElement.removeEventListener(eventName, eventListener, {//自动在组件卸载时移除事件监听器，避免内存泄漏或重复绑定事件
+        targetElement.removeEventListener(eventName, eventListener, {//#自动在组件卸载时移除事件监听器，避免内存泄漏或重复绑定事件
           capture: options.capture,
         });
       };

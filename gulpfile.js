@@ -32,7 +32,7 @@ gulp.task('cjs', function () {
 
 gulp.task('declaration', function () {//#通过 TypeScript 的编译器生成 .d.ts 文件。输出到es/和lib/
   const tsProject = ts.createProject('tsconfig.pro.json', {
-    declaration: true,
+    declaration: true,//生成.d.ts文件
     emitDeclarationOnly: true,
   });
   return tsProject.src().pipe(tsProject()).pipe(gulp.dest('es/')).pipe(gulp.dest('lib/'));
