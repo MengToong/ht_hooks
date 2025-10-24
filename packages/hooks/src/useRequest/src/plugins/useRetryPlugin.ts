@@ -19,7 +19,7 @@ const useRetryPlugin: Plugin<any, any[]> = (fetchInstance, { retryInterval, retr
 
   return {
     onBefore: () => { //请求前重置失败重试次数，保证每次新请求都从 0 次开始
-      if (!triggerByRetry.current) {
+      if (!triggerByRetry.current) {//#只有非请求失败导致重试的请求开始时才会将失败次数清0，请求失败重试时不清零
         countRef.current = 0;
       }
       triggerByRetry.current = false;

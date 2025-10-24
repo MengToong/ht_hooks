@@ -65,7 +65,7 @@ function useRequestImplement<TData, TParams extends any[]>(
     fetchInstance.cancel();
   });
 
-  return { //!调用useRequest实际返回的结果，即fetch实例的状态和方法
+  return { //!调用useRequest实际返回的结果，其实都是fetch实例的状态和方法
     loading: fetchInstance.state.loading, //请求状态
     data: fetchInstance.state.data, //请求返回数据，//!虽然还没run没有实际请求结果，但是先返回，别人先拿着，run时底层调用setState更新data，别人手里拿的data自然就变的有值了
     error: fetchInstance.state.error, //请求错误信息

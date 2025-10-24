@@ -15,8 +15,8 @@ gulp.task('es', function () {
   });
   return tsProject.src().pipe(tsProject()).pipe(babel()).pipe(gulp.dest('es/'));
   //#src()定义处理的文件，有resolve配置就是处理那里的文件，否则去config里的"rootDir": "src"定义了根目录，处理这里的ts文件
-  //#tsProject()将ts编译为es5语法（tsconfig定义的）的es6+模块（上面module:esnext定义的）
-  //#babel() 将es5语法的es6模块使用babel编译为es5语法的es6模块并输出到/es文件夹
+  //#tsProject()将ts编译为es6语法（tsconfig定义的）的esm模块（上面module:esnext定义的）
+  //#babel() 将es6语法的esm模块使用babel编译为es5语法的esm模块并输出到/es文件夹
 });
 
 gulp.task('cjs', function () {

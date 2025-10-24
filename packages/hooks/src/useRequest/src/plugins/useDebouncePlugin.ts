@@ -31,7 +31,7 @@ const useDebouncePlugin: Plugin<any, any[]> = (
 
   useEffect(() => {
     if (debounceWait) {
-      const _originRunAsync = fetchInstance.runAsync.bind(fetchInstance);
+      const _originRunAsync = fetchInstance.runAsync.bind(fetchInstance);//#保存原始的 runAsync 方法，防止后面被覆盖后丢失。相当于“备份原版”
 
       debouncedRef.current = debounce( //#lodash中的防抖api,debounce() 返回的是一个被“防抖包裹”的新函数。
         (callback) => {
